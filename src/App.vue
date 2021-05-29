@@ -1,21 +1,23 @@
 <template>
   <theme-provider :theme="theme">
     <hero
-      v-bind:author="author"
+        v-bind:author="author"
     />
-    <card-container id="products">
-      <card
-        v-for="(product, index) in products" :key="index"
-        v-bind:name="product.name"
-        v-bind:medium="product.medium"
-        v-bind:summary="product.summary"
-        v-bind:copy="product.copy"
-        v-bind:links="product.links"
-        v-bind:images="product.images"
-      />
-    </card-container>
-    <foot v-bind:author="author" v-bind:links="links" />
-    <light-toggle v-on:click="toggleTheme()"><span v-if="!isDark" >💡</span><span v-if="isDark">💡</span></light-toggle>
+    <wrapper id="products">
+      <card-category v-for="({ category, projects }, index) in products" :key="index" :first="index === 0">
+        <category-heading>{{ category }}</category-heading>
+        <card
+            v-for="(project, cardIndex) in projects"
+            :key="cardIndex"
+            v-bind="project"
+        />
+      </card-category>
+    </wrapper>
+    <foot v-bind:author="author" v-bind:links="links"/>
+    <light-toggle v-on:click="toggleTheme()">
+      <span v-if="!isDark">💡</span>
+      <span v-if="isDark">💡</span>
+    </light-toggle>
   </theme-provider>
 </template>
 
@@ -25,6 +27,7 @@ import styled from 'vue-styled-components'
 import Hero from './components/Hero.vue'
 import Card from './components/Card.vue'
 import Foot from './components/Foot.vue'
+import { Wrapper } from './components/styles/Ui.ts'
 import { ThemeProvider, injectGlobal } from 'vue-styled-components'
 
 import baseData from './data/fixtures.ts'
@@ -50,9 +53,11 @@ const adjustTheme = () => {
   var body = document.getElementsByTagName('body')[0]
   if (localStore.dark) {
     body.style.setProperty("--main-color", dark.color.text)
+    body.style.setProperty("--main-link-color", dark.color.link)
     html.style.setProperty("--main-background-color", dark.color.background)
   } else {
     body.style.setProperty("--main-color", light.color.text)
+    body.style.setProperty("--main-link-color", light.color.link)
     html.style.setProperty("--main-background-color", light.color.background)
   }
 }
@@ -114,16 +119,30 @@ injectGlobal`
   }
 
   a {
-    color: #3B70A2;
+    color: var(--main-link-color, #3B70A2);
     text-decoration: none;
     position: relative;
   }
 `
+const CardCategoryProps = { first: Boolean }
 
-const CardContainer = styled.div`
-  margin-top: -60px;
-  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
-    margin-top: -48px;
+
+const CardCategory = styled('div', CardCategoryProps)`
+  padding-top: ${props => props.first ? '60px' : '0'};
+`
+
+const CategoryHeading = styled.h3`
+  margin-top: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+  font-size: 40px;
+  @media screen and (min-width: 320px) {
+    font-size: calc(40px + 14 * ((100vw - 320px) / 680));
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 54px;
   }
 `
 
@@ -150,11 +169,13 @@ const LightToggle = styled.button`
 export default {
   name: 'App',
   components: {
+    Wrapper,
     Hero,
     Card,
     Foot,
     ThemeProvider,
-    CardContainer,
+    CardCategory,
+    CategoryHeading,
     LightToggle
   },
   computed: {
@@ -184,9 +205,9 @@ export default {
     // Avoid buggy animations
     setTimeout(() => {
       var html = document.getElementsByTagName('html')[0]
-      html.style.setProperty("transition", "0.3s color, 0.3s background")
+      html.style.setProperty("transition", "0.3s color")
       var body = document.getElementsByTagName('body')[0]
-      body.style.setProperty("transition", "0.3s color, 0.3s background")
+      body.style.setProperty("transition", "0.3s color")
     }, 300)
   }
 }
@@ -194,6 +215,9 @@ export default {
 
 <style>
 /* Hack until createGlobalStyles comes to vue-styled-components */
+* {
+  box-sizing: border-box;
+}
 html {
   background: var(--main-background-color);
 }

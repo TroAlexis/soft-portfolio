@@ -16,8 +16,8 @@
               </slide>
             </styled-carousel>
           </carousel-container>
-          <subtitle>{{summary}}</subtitle>
-          <paragraph v-for="(text, index) in copy" :key="index">{{text}}</paragraph>
+          <subtitle v-html="summary"></subtitle>
+          <paragraph v-for="(text, index) in copy" :key="index" v-html="text"></paragraph>
         </div>
         <button-container :empty="!copy">
           <styled-button
@@ -53,7 +53,6 @@ import { Carousel, Slide } from 'vue-carousel'
 import { Subtitle, Paragraph } from './styles/Text.ts'
 
 const Card = styled.div`
-  width: ${({theme}) => theme.screen.width.desktop}px;
   background: ${({theme}) => theme.card.background};
   box-shadow: ${({theme}) => theme.card.boxShadow};
   border-radius: 20px;
@@ -63,10 +62,10 @@ const Card = styled.div`
   /* Can't transition radial gradients */
   /* transition: 0.3s background; */
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
-    width: ${({theme}) => theme.screen.width.tablet}px;
+    max-width: 650px;
   }
   @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
-    width: ${({theme}) => theme.screen.width.mobile}px;
+    max-width: 100%;
   }
 `
 
@@ -77,29 +76,22 @@ const Contents = styled.div`
 
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     padding: 40px ${({theme}) => theme.screen.padding.tablet}px;
-    width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
     margin: 0;
   }
 
   @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
     padding: 40px ${({theme}) => theme.screen.padding.mobile}px;
-    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
   }
 `
 
 const LeftContainer = styled.div`
-  width: 320px;
-  margin-right: 10px;
+  max-width: 320px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
-    width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
-  }
-
-  @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
-    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
+    max-width: 100%;
   }
 `
 
@@ -128,7 +120,7 @@ const ButtonContainer = styled('div', btnContainerProps)`
   @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
     margin-top: 32px;
   }
-  margin-top: ${(props) => props.empty ? 32 : 0}px;
+  margin-top: 32px;
 `
 
 const btnProps = { primary: Boolean, secondary: Boolean, color: String }
@@ -189,8 +181,10 @@ const StyledCarousel = styled(Carousel)`
   box-shadow: ${({theme}) => theme.card.carousel.boxShadow};
   border-radius: 10px;
   overflow: hidden;
-  height: 275px;
   width: 500px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 & > .VueCarousel-pagination {
@@ -215,16 +209,8 @@ const StyledCarousel = styled(Carousel)`
 
 @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
   &.VueCarousel {
-    width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
-    height: ${({theme}) => (theme.screen.width.tablet - theme.screen.padding.tablet * 2) * 8.8 / 16}px;
-    margin: 20px 0px;
-  }
-}
-
-@media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
-  &.VueCarousel {
-    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
-    height: ${({theme}) => (theme.screen.width.mobile - theme.screen.padding.mobile * 2) * 8.8 / 16}px;
+    width: 100%;
+    margin: 20px auto;
   }
 }
 `

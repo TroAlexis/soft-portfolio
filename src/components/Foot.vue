@@ -10,23 +10,14 @@
 <script>
 import styled from 'vue-styled-components'
 import { Linked } from './styles/Text.ts'
+import { Wrapper } from './styles/Ui.ts'
 
-const AppFooter = styled.div`
-  width: ${({theme}) => theme.screen.width.desktop - theme.screen.padding.desktop * 2}px;
+const AppFooter = Wrapper.extend`
+  width: 100%;
   margin: 64px auto;
-  padding: 0px ${({theme}) => theme.screen.padding.desktop}px;
   display: flex;
   font-size: 18px;
   font-weight: bold;
-
-  @media screen and (max-width: ${({theme}) => theme.screen.width.desktop}px) {
-    padding: 0px 20px;
-    width: ${({theme}) => theme.screen.width.tablet - theme.screen.padding.tablet * 2}px;
-  }
-
-  @media screen and (max-width: ${({theme}) => theme.screen.width.tablet}px) {
-    width: ${({theme}) => theme.screen.width.mobile - theme.screen.padding.mobile * 2}px;
-  }
 `
 
 const Author = styled.p`

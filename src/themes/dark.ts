@@ -1,11 +1,11 @@
 export default {
   hero: {
     background: {
-      image: "/flight-mid.jpg",
+      image: "url(/flight-mid.jpg)",
     }
   },
   color: {
-    link: "#3B70A2",
+    link: "#88B3CD",
     text: "#fff",
     background: "#222",
   },
@@ -34,7 +34,7 @@ export default {
       desktop: 980
     },
     padding: {
-      mobile: 20,
+      mobile: 16,
       tablet: 20,
       desktop: 48
     }

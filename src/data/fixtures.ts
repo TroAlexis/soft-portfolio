@@ -1,113 +1,185 @@
 export default {
-  author: "Sam Xie",
+  author: "Alex Troshin",
   products: [
     {
-      name: "Double Text",
-      medium: ["React", "Go", "GraphQL"],
-      summary: "Facebook Messenger Analyzer",
-      copy: [
-        "Discover your chat behaviour for when you don't realise you've been double texting too much."
-      ],
-      links: {
-        color: "#363636",
-        primary: {
-          name: "Discover",
-          url: "https://doubletext.me/"
-        }
-      },
-      images: [
-        "/doubletext/Product Hunt 6.jpg",
-        "/doubletext/Product Hunt 5.jpg",
-        "/doubletext/Product Hunt 2.jpg",
-        "/doubletext/Product Hunt 3.jpg",
-        "/doubletext/Product Hunt 4.jpg",
+      category: 'Production projects',
+      projects: [
+        {
+          name: "V-Victoriya",
+          medium: ["Nuxt.js", "Vue", "SCSS"],
+          summary: "Hotel website",
+          copy: [
+            "A web app for a small business with a gallery and a booking (contact) form. ",
+            "A project that I made from scratch, starting from design to development, " +
+            "which taught me a lot about Vue, Nuxt and optimisation techniques, " +
+            "gave some knowledge and practice in Node.js and PHP, " +
+            "and led to first contributions to open-source modules and libs."
+          ],
+          links: {
+            color: "#363636",
+            primary: {
+              name: "Discover",
+              url: "https://v-victoriya.ru"
+            }
+          },
+          images: [
+            '/v-victoriya/v-victoriya-1.png',
+            '/v-victoriya/v-victoriya-2.png',
+            '/v-victoriya/v-victoriya-3.png',
+          ]
+        },
+        {
+          name: "Ligva",
+          medium: ["Nuxt.js", "Vue", "TailwindCSS"],
+          summary: "Language services startup",
+          copy: [
+            "A bold project aimed on providing language services. ",
+            "My first acquaintance with Vue and Nuxt. ",
+            "I was trusted with making landings for translators and clients, adding responsiveness to the existing pages."
+          ],
+          links: {
+            color: "#363636",
+            primary: {
+              name: "Discover",
+              url: "https://ligva.net"
+            },
+          },
+          images: [
+            "/ligva/ligva-1.png",
+            "/ligva/ligva-2.png",
+          ]
+        },
       ]
     },
     {
-      name: "Volunteer Portal",
-      medium: ["React", "Rails", "GraphQL"],
-      summary: "Volunteering Events Portal",
-      copy: ["An event calendar focused on tracking and reporting volunteering opportunities."],
-      links: {
-        color: "#363636",
-        primary: {
-          name: "Github",
-          url: "https://github.com/zendesk/volunteer_portal"
+      category: 'Hobby/practice projects',
+      projects: [
+        {
+          name: "Toxin",
+          medium: ["Pug", "Javascript", "SCSS"],
+          summary: "Pure javascript practice",
+          copy: [
+            "First project I did to practice the basics of Javascript " +
+            "by creating a datepicker, dropdowns, form elements, to get to know Webpack better " +
+            "and to brush up on CSS.",
+          ],
+          links: {
+            color: "#363636",
+            primary: {
+              name: "Discover",
+              url: "https://troalexis.github.io/toxin-fsd/pages"
+            },
+            secondary: {
+              name: "Github",
+              url: "https://github.com/TroAlexis/toxin-fsd/"
+            }
+          },
+          images: [
+            '/toxin/toxin-3.jpg',
+            '/toxin/toxin-1.png',
+            '/toxin/toxin-2.png',
+          ]
         },
-        secondary: {
-          name: "Demo",
-          url: "https://volunteer-portal-demo.herokuapp.com/"
-        }
-      },
-      images: [
-        "/volunteerportal/1.jpg"
+        {
+          name: "Naviscroll.js",
+          medium: ["Javascript", "IntersectionObserver"],
+          summary: "Tiny navigation plugin",
+          copy: [
+            "Navigation plugin I decided to create after a task I was given at work " +
+            "to make a nav menu that would track your progress of reading the article " +
+            "and allow for fast switching between the sections. ",
+            "It recursively goes through the tree, sets up an observer on each section, creates a navigation menu " +
+            "and lets you hook into each section build, sections getting in and out of view."
+          ],
+          links: {
+            color: "#363636",
+            primary: {
+              name: "Discover",
+              url: "https://github.com/TroAlexis/naviscroll"
+            },
+          },
+          images: [
+            "/naviscroll/naviscroll-1.jpg",
+          ]
+        },
+        {
+          name: "Room",
+          medium: ["Pug", "Javascript", "SCSS"],
+          summary: "<a href=\"https://frontendmentor.io\">Frontendmentor.io</a> challenge",
+          copy: [
+            "A small landing page with a javascript infinite slider I made for practice and deeper understanding."
+          ],
+          links: {
+            color: "#363636",
+            primary: {
+              name: "Discover",
+              url: "https://troalexis.github.io/frontend-room/"
+            },
+            secondary: {
+              name: "Github",
+              url: "https://github.com/TroAlexis/frontend-room"
+            }
+          },
+          images: [
+            "/room/room-1.jpg",
+          ]
+        },
+        {
+          name: "IP-Tracker",
+          medium: ["React", "Pug", "CSS-Modules"],
+          summary: "<a href=\"https://frontendmentor.io\">Frontendmentor.io</a> challenge",
+          copy: [
+            "Public IP address tracker made with React (just to practice it, not that it is really needed here). ",
+            "<a href='https://www.ipify.org/'>Ipify</a> for getting public IP and coordinates and <a href='https://leafletjs.com/reference-1.7.1.html'>Leaflet</a> for displaying them visually on the map."
+          ],
+          links: {
+            color: "#363636",
+            primary: {
+              name: "Discover",
+              url: "https://troalexis.github.io/frontend-ip-tracker/"
+            },
+            secondary: {
+              name: "Github",
+              url: "https://github.com/TroAlexis/frontend-ip-tracker"
+            }
+          },
+          images: [
+            "/tracker/tracker.jpg",
+          ]
+        },
+        {
+          name: "Walkers",
+          medium: ["React", "Pug", "CSS-Modules"],
+          summary: "<a href=\"https://frontendmentor.io\">Frontendmentor.io</a> challenge",
+          copy: [
+            "Tiny landing I made to mainly practice transitions in React along with CSS",
+          ],
+          links: {
+            color: "#363636",
+            primary: {
+              name: "Discover",
+              url: "https://troalexis.github.io/frontend-chat/"
+            },
+            secondary: {
+              name: "Github",
+              url: "https://github.com/TroAlexis/frontend-chat"
+            }
+          },
+          images: [
+            "/chat/chat.jpg",
+          ]
+        },
       ]
-    },
-    {
-      name: "MPH Watch",
-      medium: ["React", "NodeJS"],
-      summary: "Crypto Mining Stats",
-      copy: ["Track your mining progress for miners on Mining Pool Hub."],
-      links: {
-        color: "#363636",
-        primary: {
-          name: "Demo",
-          url: "http://mphwatch.samxie.net/demo"
-        },
-        secondary: {
-          name: "Login",
-          url: "http://mphwatch.samxie.net/"
-        }
-      },
-      images: [
-        "/mphwatch/mphwatch.jpg",
-      ]
-    },
-    {
-      name: "Prototype I",
-      medium: ["Unity", "OculusSDK"],
-      summary: "Freestyle locomotion system",
-      copy: ["A short survival experience on an abandoned planet."],
-      links: {
-        color: "#363636",
-        primary: {
-          name: "Discover",
-          url: "https://samzx.itch.io/final-slash-vr"
-        },
-      },
-      images: [
-        "/slash/1.jpg",
-        "/slash/2.jpg",
-        "/slash/3.jpg"
-      ]
-    },
-    {
-      name: "More works",
-      links: {
-        color: "#363636",
-        primary: {
-          name: "Github",
-          url: "https://github.com/samzx"
-        },
-        secondary: {
-          name: "Medium",
-          url: "https://medium.com/@samxie"
-        },
-      }
     }
   ],
   links: [
     {
-      name: "Twitter",
-      url: "https://twitter.com/samxstudio"
-    },
-    {
-      name: "Linkedin",
-      url: "https://www.linkedin.com/in/xiesam/"
+      name: "Github",
+      url: "https://github.com/TroAlexis"
     },
     {
       name: "Email",
-      url: "mailto:contact@samxie.net"
+      url: "mailto:aleksei.troshin1997@gmail.com"
     },
   ]
 }

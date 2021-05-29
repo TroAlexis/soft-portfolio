@@ -1,7 +1,7 @@
 export default {
   hero: {
     background: {
-      image: "/flight-light.jpg",
+      image: "linear-gradient(180deg, rgba(238, 238, 238, 0) 70%, var(--main-background-color) 100%), url(/flight-light.jpg)",
     }
   },
   color: {
@@ -34,7 +34,7 @@ export default {
       desktop: 980
     },
     padding: {
-      mobile: 20,
+      mobile: 16,
       tablet: 20,
       desktop: 48
     }
