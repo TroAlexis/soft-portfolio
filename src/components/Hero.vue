@@ -11,10 +11,15 @@
           </paragraph>
           <social-links>
             <social-link-text>
-              <linked href="https://github.com/TroAlexis" target="_blank">
+              <social-link href="https://github.com/TroAlexis" target="_blank">
                 <i class="fab fa-github"></i>
                 Github
-              </linked>
+              </social-link>
+
+              <social-link href="https://www.linkedin.com/in/alex-troshin" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                  Linkedin
+              </social-link>
             </social-link-text>
           </social-links>
         </text-container>
@@ -98,6 +103,12 @@ const SocialLinkText = styled(Subheading)`
   font-weight: bold;
 `
 
+const SocialLink = styled(Linked)`
+  & + & {
+      margin-left: 16px;
+  }
+`
+
 export default {
   components: {
     Wrapper,
@@ -107,6 +118,7 @@ export default {
     TextContainer,
     SocialLinks,
     SocialLinkText,
+    SocialLink,
     Heading,
     Subtitle,
     Paragraph

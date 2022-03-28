@@ -106,11 +106,11 @@ export default {
         },
         {
           name: "Countries",
-          medium: ["Vue 3", "Composition API", "TypeScript"],
+          medium: ["Vue 3", "Composition API"],
           summary: "World countries challenge from <a href=\"https://frontendmentor.io\">Frontendmentor.io</a>",
           copy: [
             "A project that was developed to practice Composition API " +
-            "and to learn Vue 3 breaking changes and features as well as TypeScript"
+            "and to learn Vue 3 breaking changes and features"
           ],
           links: {
             color: "#363636",
@@ -202,6 +202,10 @@ export default {
     {
       name: "Github",
       url: "https://github.com/TroAlexis"
+    },
+    {
+      name: "Linkedin",
+      url: "https://www.linkedin.com/in/alex-troshin"
     },
     {
       name: "Email",
