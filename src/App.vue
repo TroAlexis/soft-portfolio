@@ -33,6 +33,7 @@ import { ThemeProvider, injectGlobal } from 'vue-styled-components'
 import baseData from './data/fixtures.ts'
 import light from './themes/light.ts'
 import dark from './themes/dark.ts'
+import {formatPublicPath} from './js/utils';
 
 const localStore = Vue.observable({
   dark: false
@@ -77,27 +78,29 @@ if (window.matchMedia) {
   }
 }
 
+const BASE_URL = formatPublicPath(process.env.BASE_URL);
+
 injectGlobal`
   @font-face {
     font-family: "SF Pro Display";
     font-weight: 400;
-    src: url("/fonts/SFProDisplay-Regular.ttf");
+    src: url("${BASE_URL}/fonts/SFProDisplay-Regular.ttf");
   }
   @font-face {
     font-family: "SF Pro Display";
     font-weight: 700;
-    src: url("/fonts/SFProDisplay-Bold.ttf");
+    src: url("/${BASE_URL}fonts/SFProDisplay-Bold.ttf");
   }
   @font-face {
     font-family: "SF Pro Display";
     font-weight: 300;
-    src: url("/fonts/SFProDisplay-Light.ttf");
+    src: url("${BASE_URL}/fonts/SFProDisplay-Light.ttf");
   }
   @font-face {
     font-family: "SF Pro Display";
     font-weight: 400;
     font-style: italic;
-    src: url("/fonts/SFProDisplay-RegularItalic.ttf");
+    src: url("${BASE_URL}/fonts/SFProDisplay-RegularItalic.ttf");
   }
 
   html {
