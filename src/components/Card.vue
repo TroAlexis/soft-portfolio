@@ -179,11 +179,18 @@ const CarouselContainer = styled.div`
 const StyledCarousel = styled(Carousel)`
 &.VueCarousel {
   box-shadow: ${({theme}) => theme.card.carousel.boxShadow};
-  height: 275px;
   width: 500px;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+& .VueCarousel-slide {
+  flex-basis: 100%;
+}
+
+& .VueCarousel-inner {
+  max-height: 100%;
 }
 
 .VueCarousel-wrapper {
