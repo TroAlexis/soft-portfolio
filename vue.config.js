@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/soft-portfolio/'
+    publicPath: process.env.PUBLIC_PATH || '/',
 }

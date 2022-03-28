@@ -34,6 +34,7 @@ jobs:
       - name: Build for production
         env:
           NODE_ENV: "production"
+          PUBLIC_PATH: "/soft-portfolio/"
         run: npm run build
 
       - name: deploy

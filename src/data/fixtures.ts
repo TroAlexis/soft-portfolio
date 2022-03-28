@@ -1,3 +1,5 @@
+import {withPublicPath} from "../js/utils";
+
 export default {
   author: "Alex Troshin",
   products: [
@@ -22,11 +24,11 @@ export default {
               url: "https://v-victoriya.ru"
             }
           },
-          images: [
+          images: withPublicPath([
             '/v-victoriya/v-victoriya-1.png',
             '/v-victoriya/v-victoriya-2.png',
             '/v-victoriya/v-victoriya-3.png',
-          ]
+          ])
         },
         {
           name: "Ligva",
@@ -44,10 +46,10 @@ export default {
               url: "https://ligva.net"
             },
           },
-          images: [
+          images: withPublicPath([
             "/ligva/ligva-1.png",
             "/ligva/ligva-2.png",
-          ]
+          ])
         },
       ]
     },
@@ -74,11 +76,11 @@ export default {
               url: "https://github.com/TroAlexis/toxin-fsd/"
             }
           },
-          images: [
+          images: withPublicPath([
             '/toxin/toxin-3.jpg',
             '/toxin/toxin-1.png',
             '/toxin/toxin-2.png',
-          ]
+          ])
         },
         {
           name: "Naviscroll.js",
@@ -98,9 +100,9 @@ export default {
               url: "https://github.com/TroAlexis/naviscroll"
             },
           },
-          images: [
+          images: withPublicPath([
             "/naviscroll/naviscroll-1.jpg",
-          ]
+          ])
         },
         {
           name: "Countries",
@@ -121,10 +123,10 @@ export default {
               url: "https://github.com/TroAlexis/countries-rest/"
             }
           },
-          images: [
+          images:withPublicPath([
             '/countries/countries-1.jpg',
             '/countries/countries-2.jpg',
-          ]
+          ])
         },
         {
           name: "Room",
@@ -144,9 +146,9 @@ export default {
               url: "https://github.com/TroAlexis/frontend-room"
             }
           },
-          images: [
+          images: withPublicPath([
             "/room/room-1.jpg",
-          ]
+          ])
         },
         {
           name: "IP-Tracker",
@@ -189,9 +191,9 @@ export default {
               url: "https://github.com/TroAlexis/frontend-chat"
             }
           },
-          images: [
+          images: withPublicPath([
             "/chat/chat.jpg",
-          ]
+          ])
         },
       ]
     }

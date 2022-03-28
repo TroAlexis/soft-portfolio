@@ -1,7 +1,11 @@
+import {formatPublicPath} from '../js/utils';
+
+const BASE_URL = formatPublicPath(process.env.BASE_URL);
+
 export default {
   hero: {
     background: {
-      image: "linear-gradient(180deg, rgba(238, 238, 238, 0) 70%, var(--main-background-color) 100%), url(/flight-light.jpg)",
+      image: `linear-gradient(180deg, rgba(238, 238, 238, 0) 70%, var(--main-background-color) 100%), url(${BASE_URL}/flight-light.jpg)`,
     }
   },
   color: {
