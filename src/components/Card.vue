@@ -179,12 +179,15 @@ const CarouselContainer = styled.div`
 const StyledCarousel = styled(Carousel)`
 &.VueCarousel {
   box-shadow: ${({theme}) => theme.card.carousel.boxShadow};
-  border-radius: 10px;
-  overflow: hidden;
+  height: 275px;
   width: 500px;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.VueCarousel-wrapper {
+    border-radius: 10px;
 }
 
 & > .VueCarousel-pagination {
