@@ -1,7 +1,7 @@
 export default {
   hero: {
     background: {
-      image: "url(/flight-mid.jpg)",
+      image: "linear-gradient(to top, #222 0%, rgba(34, 34, 34, 0) 20%), url(/flight-mid.jpg)",
     }
   },
   color: {
