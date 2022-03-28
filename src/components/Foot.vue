@@ -1,9 +1,12 @@
 <template>
   <app-footer>
     <author>{{author}}</author>
-    <p v-for="(link, index) in links" :key="`product-desctiption-${index}`">
-        <linked target="_blank" v-bind:href="link.url">{{link.name}}</linked><slash v-if="index != links.length - 1">/</slash>
-    </p>
+      <links>
+          <p v-for="(link, index) in links" :key="`product-desctiption-${index}`">
+              <linked target="_blank" v-bind:href="link.url">{{ link.name }}</linked>
+              <slash v-if="index != links.length - 1">/</slash>
+          </p>
+      </links>
   </app-footer>
 </template>
 
@@ -16,8 +19,13 @@ const AppFooter = Wrapper.extend`
   width: 100%;
   margin: 64px auto;
   display: flex;
+  flex-wrap: wrap;
   font-size: 18px;
   font-weight: bold;
+`
+
+const Links = styled.div`
+    display: flex;
 `
 
 const Author = styled.p`
@@ -31,6 +39,7 @@ const Slash = styled.span`
 export default {
   components: {
     Linked,
+    Links,
     AppFooter,
     Author,
     Slash
