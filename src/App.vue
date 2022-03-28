@@ -89,7 +89,7 @@ injectGlobal`
   @font-face {
     font-family: "SF Pro Display";
     font-weight: 700;
-    src: url("/${BASE_URL}fonts/SFProDisplay-Bold.ttf");
+    src: url("${BASE_URL}/fonts/SFProDisplay-Bold.ttf");
   }
   @font-face {
     font-family: "SF Pro Display";
