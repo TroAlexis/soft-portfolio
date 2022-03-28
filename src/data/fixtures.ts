@@ -169,9 +169,9 @@ export default {
               url: "https://github.com/TroAlexis/frontend-ip-tracker"
             }
           },
-          images: [
+          images: withPublicPath([
             "/tracker/tracker.jpg",
-          ]
+          ])
         },
         {
           name: "Walkers",
