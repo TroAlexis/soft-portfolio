@@ -103,6 +103,30 @@ export default {
           ]
         },
         {
+          name: "Countries",
+          medium: ["Vue 3", "Composition API", "TypeScript"],
+          summary: "World countries challenge from <a href=\"https://frontendmentor.io\">Frontendmentor.io</a>",
+          copy: [
+            "A project that was developed to practice Composition API " +
+            "and to learn Vue 3 breaking changes and features as well as TypeScript"
+          ],
+          links: {
+            color: "#363636",
+            primary: {
+              name: "Discover",
+              url: "https://troalexis.github.io/countries-rest"
+            },
+            secondary: {
+              name: "Github",
+              url: "https://github.com/TroAlexis/countries-rest/"
+            }
+          },
+          images: [
+            '/countries/countries-1.jpg',
+            '/countries/countries-2.jpg',
+          ]
+        },
+        {
           name: "Room",
           medium: ["Pug", "Javascript", "SCSS"],
           summary: "<a href=\"https://frontendmentor.io\">Frontendmentor.io</a> challenge",
